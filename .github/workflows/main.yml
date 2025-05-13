@@ -1,0 +1,25 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to cPanel
+        id: deploy
+        uses: musasoftlabx/cpanel-deploy-action@v7
+        with:
+          hostname: "http://4c.co.ke"
+          repository_root: "/home/foresee/public_html"
+          branch: main
+          cpanel_token: "G1VEDT3WMFRBNUBN3ASAEUQ9Y5RCGCAQ"
+          cpanel_username: "foresee"
+      - name: echo deploy-duration
+        run: echo "Deployment took ${{ steps.deploy.outputs.duration }} milliseconds"
