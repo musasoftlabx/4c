@@ -17,7 +17,7 @@ jobs:
         uses: musasoftlabx/cpanel-deploy-action@v7
         with:
           hostname: "https://4c.co.ke"
-          repository_root: "/home/foresee/public_html"
+          repository_root: "/home/foresee/4c"
           branch: main
           cpanel_token: "G1VEDT3WMFRBNUBN3ASAEUQ9Y5RCGCAQ"
           cpanel_username: "foresee"
