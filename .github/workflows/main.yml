@@ -17,13 +17,9 @@ jobs:
         uses: musasoftlabx/cpanel-deploy-action@v7
         with:
           hostname: "https://4c.co.ke"
-          repository_root: "/home/foresee/4c"
+          repository_root: "/home/foresee/public_html"
           branch: main
           cpanel_token: "G1VEDT3WMFRBNUBN3ASAEUQ9Y5RCGCAQ"
           cpanel_username: "foresee"
       - name: echo deploy-duration
-        run:
-          echo "Deployment took ${{ steps.deploy.outputs.duration }} milliseconds"
-          export DEPLOYPATH=/home/foresee/public_html/
-          /bin/cp index.html $DEPLOYPATH
-          /bin/cp style.css $DEPLOYPATH
+        run: echo "Deployment took ${{ steps.deploy.outputs.duration }} milliseconds"
