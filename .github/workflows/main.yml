@@ -22,4 +22,8 @@ jobs:
           cpanel_token: "G1VEDT3WMFRBNUBN3ASAEUQ9Y5RCGCAQ"
           cpanel_username: "foresee"
       - name: echo deploy-duration
-        run: echo "Deployment took ${{ steps.deploy.outputs.duration }} milliseconds"
+        run:
+          echo "Deployment took ${{ steps.deploy.outputs.duration }} milliseconds"
+          export DEPLOYPATH=/home/foresee/public_html/
+          /bin/cp index.html $DEPLOYPATH
+          /bin/cp style.css $DEPLOYPATH
